@@ -1,8 +1,9 @@
 #!/usr/local/bin/python
 # -*- coding: utf-8 -*-
 import os,urllib2,urllib
-path = '~/download/'
-name = 'banner.jpg'
-name = os.path.join(path,name)
+path = '/home/lijc/neunn.jpg'
 url = "http://www.cnscn.com.cn/company/skin/default/banner.jpg"
-urllib.urlretrieve(url,name)
+data = urllib.urlopen(url).read()
+f = file(path,"wb")
+f.write(data)
+f.close()
